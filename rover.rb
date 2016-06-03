@@ -4,27 +4,31 @@ class Rover
 attr_accessor :x, :y, :direction
 
   # initialize the variables
-  def initialize(x, y) #direction)
+  def initialize(x, y, direction)
     @x = x
     @y = y
-    #@direction = direction
+    @direction = direction
   end
 
   def read_instruction
 
     #attr_accessor :height, :weight
 
-    puts "What is the size of the plateau? Give me two numbers"
-      @size = gets.chomp
-      size_array = @size.split(" ")
-      size_x = size_array[0]
-      size_y = size_array[1]
-      return size_x + " " + size_y
-    # puts "Where you want start?"
-    #   @position_first = gets.chomp
-    #   position_first_array = @position_first.split(" ")
-    #   @x = position_first_array[0]
-    #   @y = position_first_array[1]
+    # puts "What is the size of the plateau? Give me two numbers"
+    #   @size = gets.chomp
+    #   size_array = @size.split(" ")
+    #   size_x = size_array[0]
+    #   size_y = size_array[1]
+    #   return size_x + " " + size_y
+
+    puts "Where you want start?Give me two numbers and one coordinate"
+      @position_first = gets.chomp
+      position_first_array = @position_first.split(" ")
+      @x = position_first_array[0]
+      @y = position_first_array[1]
+      @direction = position_first_array[2]
+
+      return @x + " " + @y + " " + @direction
     #
     # puts "Give me the combination of Move and Turn"
     #   @combination_first = gets.chomp
